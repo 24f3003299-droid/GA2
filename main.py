@@ -125,3 +125,12 @@ async def healthz():
             "status": "error",
             "redis": "down"
         }
+@app.get("/effective-config")
+async def effective_config():
+    return {
+        "port": config.Q3_PORT,
+        "workers": config.Q3_WORKERS,
+        "debug": config.Q3_DEBUG,
+        "log_level": config.Q3_LOG_LEVEL,
+        "api_key": "****"
+    }
