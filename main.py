@@ -3,9 +3,8 @@ from fastapi.responses import JSONResponse
 from fastapi.middleware.cors import CORSMiddleware
 import time
 import uuid
-import config
 import jwt
-from fastapi import Request
+import config
 
 app = FastAPI()
 
@@ -41,13 +40,13 @@ async def stats(values: str = ""):
     except ValueError:
         return JSONResponse(
             status_code=400,
-            content={"error": "Invalid input"}
+            content={"error": "Invalid input"},
         )
 
     if not nums:
         return JSONResponse(
             status_code=400,
-            content={"error": "no values"}
+            content={"error": "no values"},
         )
 
     return {
@@ -78,12 +77,11 @@ async def verify_token(request: Request):
             "valid": True,
             "email": payload.get("email", ""),
             "sub": payload.get("sub", ""),
-            "aud": payload.get("aud", "")
+            "aud": payload.get("aud", ""),
         }
 
     except Exception:
         return JSONResponse(
             status_code=401,
-            content={"valid": False}
-        )
+            content={"valid": False},
         )
