@@ -20,21 +20,24 @@ ed+zclR6BcmNNo/WVfJ4xyCLSf0BCOgdTgW6PdaChd1l9VDetJZVEgC5tkyvXsfI
 SI6iyrYbKR0NEBSqq4XkadEjsCs4F1RncsS4LlgniT7GlkL9Mce3b0wGLs9/7ZIX
 dQIDAQAB
 -----END PUBLIC KEY-----"""
-# Q3 (default rehne do)
+# 4. Q3: 12-Factor Config (Manually merge the variables)
 Q3_PORT = 8000
 Q3_WORKERS = 1
 Q3_DEBUG = False
 Q3_LOG_LEVEL = "info"
 
-# Q5 (baad me fill karna)
-Q5_API_KEY = ""
+# 5. Q5: Analytics (Find the API key in the Q5 instruction tab)
+Q5_API_KEY = "ak_..."
 
-# Q9 (default rehne do)
+# 6. Q9: Idempotency & Rate Limit (Find total orders and rate limit)
 Q9_TOTAL_ORDERS = 50
 Q9_RATE_LIMIT = 15
 
-# Q10 (baad me fill karna)
-Q10_ALLOWED_ORIGIN = ""
+# 7. Q10: Middleware Rate Limit (Find allowed origin and rate limit)
+Q10_ALLOWED_ORIGIN = "https://app-xxxxxx.example.com"
 Q10_RATE_LIMIT = 8
 
+# ==========================================
+# FIXED VARIABLES (Do not change these)
+# ==========================================
 EXAM_PORTAL_ORIGIN = "https://exam.sanand.workers.dev"
