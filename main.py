@@ -4,6 +4,8 @@ from fastapi.middleware.cors import CORSMiddleware
 import time
 import uuid
 import config
+import jwt
+from fastapi import Request
 
 app = FastAPI()
 
@@ -56,3 +58,29 @@ async def stats(values: str = ""):
         "max": max(nums),
         "mean": round(sum(nums) / len(nums), 6),
     }
+    @app.post("/verify")
+async def verify_token(request: Request):
+    try:
+        body = await request.json()
+        token = body.get("token")
+
+        payload = jwt.decode(
+            token,
+            config.PUBLIC_KEY_PEM,
+            algorithms=["RS256"],
+            issuer=config.ISSUER,
+            audience=config.AUDIENCE,
+        )
+
+        return {
+            "valid": True,
+            "email": payload.get("email", ""),
+            "sub": payload.get("sub", ""),
+            "aud": payload.get("aud", "")
+        }
+
+    except Exception:
+        return JSONResponse(
+            status_code=401,
+            content={"valid": False}
+        )
