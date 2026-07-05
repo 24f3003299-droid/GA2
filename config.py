@@ -31,8 +31,8 @@ Q3_LOG_LEVEL = "debug"
 Q5_API_KEY = "ak_nesopcw6to8dyh4ym87r09ae"
 
 # 6. Q9: Idempotency & Rate Limit (Find total orders and rate limit)
-Q9_TOTAL_ORDERS = 50
-Q9_RATE_LIMIT = 15
+Q9_TOTAL_ORDERS = 47
+Q9_RATE_LIMIT = 16
 
 # 7. Q10: Middleware Rate Limit (Find allowed origin and rate limit)
 Q10_ALLOWED_ORIGIN = "https://app-xxxxxx.example.com"
