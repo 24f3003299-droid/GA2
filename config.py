@@ -35,8 +35,8 @@ Q9_TOTAL_ORDERS = 47
 Q9_RATE_LIMIT = 16
 
 # 7. Q10: Middleware Rate Limit (Find allowed origin and rate limit)
-Q10_ALLOWED_ORIGIN = "https://app-xxxxxx.example.com"
-Q10_RATE_LIMIT = 8
+Q10_ALLOWED_ORIGIN = "https://app-lmaesu.example.com"
+Q10_RATE_LIMIT = 12
 
 # ==========================================
 # FIXED VARIABLES (Do not change these)
