@@ -58,7 +58,9 @@ async def stats(values: str = ""):
         "max": max(nums),
         "mean": round(sum(nums) / len(nums), 6),
     }
-    @app.post("/verify")
+
+
+@app.post("/verify")
 async def verify_token(request: Request):
     try:
         body = await request.json()
@@ -83,4 +85,5 @@ async def verify_token(request: Request):
         return JSONResponse(
             status_code=401,
             content={"valid": False}
+        )
         )
