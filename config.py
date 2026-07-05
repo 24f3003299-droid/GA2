@@ -21,10 +21,11 @@ SI6iyrYbKR0NEBSqq4XkadEjsCs4F1RncsS4LlgniT7GlkL9Mce3b0wGLs9/7ZIX
 dQIDAQAB
 -----END PUBLIC KEY-----"""
 # 4. Q3: 12-Factor Config (Manually merge the variables)
-Q3_PORT = 8000
-Q3_WORKERS = 1
-Q3_DEBUG = False
-Q3_LOG_LEVEL = "info"
+# 4. Q3: 12-Factor Config
+Q3_PORT = 8032
+Q3_WORKERS = 9
+Q3_DEBUG = True
+Q3_LOG_LEVEL = "debug"
 
 # 5. Q5: Analytics (Find the API key in the Q5 instruction tab)
 Q5_API_KEY = "ak_..."
