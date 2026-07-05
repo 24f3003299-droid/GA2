@@ -86,3 +86,42 @@ async def verify_token(request: Request):
             status_code=401,
             content={"valid": False},
         )
+redis_client = redis.Redis(
+    host="localhost",
+    port=6379,
+    db=0,
+    decode_responses=True
+)
+@app.post("/hit/{key}")
+async def hit(key: str):
+    count = redis_client.incr(key)
+
+    return {
+        "key": key,
+        "count": count
+    }
+@app.get("/count/{key}")
+async def count(key: str):
+
+    value = redis_client.get(key)
+
+    return {
+        "key": key,
+        "count": int(value) if value else 0
+    }    
+@app.get("/healthz")
+async def healthz():
+
+    try:
+        redis_client.ping()
+
+        return {
+            "status": "ok",
+            "redis": "up"
+        }
+
+    except:
+        return {
+            "status": "error",
+            "redis": "down"
+        }
