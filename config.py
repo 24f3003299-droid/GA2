@@ -28,7 +28,7 @@ Q3_DEBUG = True
 Q3_LOG_LEVEL = "debug"
 
 # 5. Q5: Analytics (Find the API key in the Q5 instruction tab)
-Q5_API_KEY = "ak_..."
+Q5_API_KEY = "ak_nesopcw6to8dyh4ym87r09ae"
 
 # 6. Q9: Idempotency & Rate Limit (Find total orders and rate limit)
 Q9_TOTAL_ORDERS = 50
