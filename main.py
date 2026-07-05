@@ -5,6 +5,7 @@ import time
 import uuid
 import jwt
 import config
+import redis
 
 app = FastAPI()
 
